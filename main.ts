@@ -16,10 +16,15 @@ const main = async () => {
             SNX,
             REWARD_RECIPIENTS,
             new ethers.providers.JsonRpcProvider("https://mainnet.optimism.io"),
-            "0xf43f2416f41b0b58086ff06040115b9522dfbe8c"
+            "0x0C8f47c1DEE52CBB24d84CbC2C2907c82C01B792"
         )
     );*/
-    await distributor(SNX, wei(SNX_AMOUNT), REWARD_RECIPIENTS);
+    await distributor(
+        SNX,
+        wei(SNX_AMOUNT),
+        REWARD_RECIPIENTS,
+        new ethers.providers.JsonRpcProvider("https://mainnet.optimism.io")
+    );
     console.log("Rewards Distributed!");
 };
 

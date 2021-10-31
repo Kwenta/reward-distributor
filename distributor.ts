@@ -34,7 +34,6 @@ export const gasEstimator = async (
         }
     );
     return wei(ethers.utils.formatEther(cost))
-        .mul(await provider.getGasPrice())
         .mul(distributions.length)
         .toString();
 };
@@ -54,6 +53,7 @@ export const distributor = async (
             amount.mul(distribution.rewardPercentage).toBN()
         );
         receipts.push(await tx.wait());
+        console.log(`Rewards sent to: ${distribution.recipientAddress}`);
     }
     return receipts;
 };
