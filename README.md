@@ -1,12 +1,14 @@
 # Reward Distributooor
 
-Script for distributing ERC20 rewards. Current implementation tailored for the Futures Competition SNX rewards. 
+Script for distributing ERC20 rewards. Current implementation tailored for the Futures Competition SNX rewards.
 
 **Note: Requires ETH in distributor wallet. If distributing more than 100 rewards consider using a merkle distributor.**
 
 ### Example ENV
+
 ```
 DISTRIBUTION_WALLET=0xPRIVATE_KEY_HERE
+INFURA_API_KEY=<key>
 ```
 
 ### Testing
@@ -15,11 +17,29 @@ DISTRIBUTION_WALLET=0xPRIVATE_KEY_HERE
 npm test
 ```
 
-### Distributing
+### Distributing SNX / Tokens
 
 ```
 npm run build
 npm run distribute
+```
+
+### Distributing Escrowed Kwenta
+
+Update the escrowRecipients.csv file with your entries and ensure you have your private key and infura api key set in a .env file.
+
+You can also update the duration and batch size by amending the values in distributeEscrowed.ts:
+
+```
+const SLICE_LENGTH = 50;
+const DURATION_WEEKS = 52;
+```
+
+Then run:
+
+```
+npm run build
+npm run distributeEscrowed
 ```
 
 ### Log Example
