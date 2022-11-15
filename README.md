@@ -39,7 +39,7 @@ Then run:
 
 ```
 npm run build
-npm run distributeEscrowed
+npm run distributeEscrowed:<mainnet | testnet>
 ```
 
 ### Log Example
