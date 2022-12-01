@@ -12,9 +12,9 @@ import ERC20ABI from "./abis/ERC20.json";
 dotenv.config();
 
 const argv = require("minimist")(process.argv.slice(2));
-let network: "mainnet" | "testnet" | undefined = argv.network;
+let network: "mainnet" | "mainnet-fork" | "testnet" | undefined = argv.network;
 
-if (network !== "mainnet" && network !== "testnet")
+if (network !== "mainnet" && network !== "mainnet-fork" && network !== "testnet")
   throw new Error('Please specify "mainnet" or "testnet" network');
 
 const rpcUrl = config[network].rpcUrl;
