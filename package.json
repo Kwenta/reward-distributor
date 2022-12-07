@@ -3,9 +3,9 @@
     "test": "npx hardhat test",
     "build": "tsc",
     "distribute": "node ./build/main.js",
-    "distributeEscrowed:testnet": "node ./build/distributeEscrowed.js --network=testnet",
-    "distributeEscrowed:mainnet": "node ./build/distributeEscrowed.js --network=mainnet",
-    "distributeEscrowed:fork": "node ./build/distributeEscrowed.js --network=mainnet-fork"
+    "distributeEscrowed:testnet": "tsc && node ./build/distributeEscrowed.js --network=testnet",
+    "distributeEscrowed:mainnet": "tsc && node ./build/distributeEscrowed.js --network=mainnet",
+    "distributeEscrowed:fork": "tsc && node ./build/distributeEscrowed.js --network=mainnet-fork"
   },
   "dependencies": {
     "@synthetixio/wei": "^2.52.1-ovm",
